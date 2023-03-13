@@ -1,5 +1,9 @@
-import static org.junit.Assert.assertEquals;
-import org.junit.Test;
+package se2;
+
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 public class StringCalculatorTest {
     StringCalculator sc = new StringCalculator();

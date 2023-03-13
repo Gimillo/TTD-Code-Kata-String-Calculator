@@ -1,5 +1,8 @@
+package se2;
+
+
 public class StringCalculator {
-    public int Calculator(String arg) /*throws Exception*/ {
+    public int Calculator(String arg) {
         int res = 0;
         String regex = ",\n";
 
@@ -20,10 +23,6 @@ public class StringCalculator {
 
         for (String operand : operands) {
             int number = Integer.parseInt(operand);
-
-            /*if (number < 0) {
-                throw new Exception("Negative params are not allowed.");
-            }*/
 
             if (number <= 1000) {
                 res += number;
