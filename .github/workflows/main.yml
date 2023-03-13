@@ -13,17 +13,17 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1
 
-      - name: Set up JDK 1.11
-        uses: actions/setup-java@v2
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
         with:
-          java-version: '11'
-          distribution: 'adopt'
-
+          java-version: '17'
+          distribution: 'temurin'
+          
       - name: Build
-        run: mvn --batch-mode -DskipTests package
+        run: mvn --batch-mode -DskipTests --update-snapshots package
         
       - name: Run the Maven verify phase
-        run: mvn --batch-mode --update-snapshots verify -Dcheckstyle.skip
+        run: mvn --batch-mode -Dcheckstyle.skip --update-snapshots verify
 
       - name: Test
         run: mvn --batch-mode -Dmaven.test.failure.ignore=true -Dcheckstyle.skip test
