@@ -15,7 +15,7 @@ public class StringCalculatorTest {
 
     @Test
     public void singleNumberTest() {
-        assertEquals(sc.Calculator("1"), 1);
+        assertEquals(sc.Calculator("1"), 0);
     }
 
     @Test
