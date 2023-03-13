@@ -20,7 +20,7 @@ jobs:
           distribution: 'adopt'
 
       - name: Build
-        run: mvn --batch-mode -DskipTests string-calculator
+        run: mvn --batch-mode -DskipTests package
 
       - name: Test
         run: mvn --batch-mode -Dmaven.test.failure.ignore=true test
