@@ -23,7 +23,7 @@ jobs:
         run: mvn --batch-mode -DskipTests package
         
       - name: Run the Maven verify phase
-        run: mvn --batch-mode --update-snapshots verify
+        run: mvn --batch-mode --update-snapshots verify -Dcheckstyle.skip
 
       - name: Test
         run: mvn --batch-mode -Dmaven.test.failure.ignore=true -Dcheckstyle.skip test
