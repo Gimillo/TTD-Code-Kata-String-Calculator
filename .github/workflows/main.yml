@@ -1,4 +1,4 @@
-name: String Calculator Workflow
+name: Maven Workflow
 
 on:
   push:
@@ -17,7 +17,8 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
       - name: Build
-        run: mvn --batch-mode -DskipTests package
-
+        run: mvn -B package --file pom.xml
+        #run: mvn --batch-mode -DskipTests package
       - name: Test
         run: mvn --batch-mode -Dmaven.test.failure.ignore=true test
+
