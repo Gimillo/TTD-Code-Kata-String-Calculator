@@ -21,12 +21,12 @@ jobs:
           
       - name: Build
         run: mvn --batch-mode -DskipTests --update-snapshots package -Dcheckstyle.skip
-        
-      - name: Run the Maven verify phase
-        run: mvn --batch-mode --update-snapshots verify -Dcheckstyle.skip
 
       - name: Test
-        run: mvn --batch-mode -Dmaven.test.failure.ignore=true test -Dcheckstyle.skip
+        run: mvn --batch-mode -Dcheckstyle.skip -Dmaven.test.failure.ignore=true test
+        
+      - name: Run the Maven verify phase
+        run: mvn --batch-mode -Dcheckstyle.skip --update-snapshots verify
 
       - name: Report
         uses: dorny/test-reporter@v1
