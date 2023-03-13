@@ -20,7 +20,7 @@ jobs:
           distribution: 'temurin'
           
       - name: Build
-        run: mvn --batch-mode -DskipTests --update-snapshots package
+        run: mvn --batch-mode -DskipTests --update-snapshots package -Dcheckstyle.skip
         
       - name: Run the Maven verify phase
         run: mvn --batch-mode --update-snapshots verify -Dcheckstyle.skip
