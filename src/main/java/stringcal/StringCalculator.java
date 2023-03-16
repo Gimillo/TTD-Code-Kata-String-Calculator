@@ -1,8 +1,8 @@
-package se2;
+package stringcal;
 
 
 public class StringCalculator {
-    public int Calculator(String arg) {
+    public int calculator(String arg) {
         int res = 0;
         String regex = ",\n";
 
