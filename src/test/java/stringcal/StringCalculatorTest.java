@@ -33,7 +33,7 @@ public class StringCalculatorTest {
 
 	@Test
 	public void sumThreeNumbersTest() {
-		assertEquals(sc.calculator("1\n0,1"), 2);
+		assertEquals(sc.calculator("1\n0,1"), 2000);
 		assertEquals(sc.calculator("9,10\n11"), 30);
 	}
 
