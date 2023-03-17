@@ -4,6 +4,9 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/*
+ * Class for testing the calculator.
+ */
 public class StringCalculatorTest {
     private StringCalculator sc = new StringCalculator();
 
@@ -19,9 +22,13 @@ public class StringCalculatorTest {
 
     @Test
     public void numCommaNumSumTest() {
-        assertEquals(sc.calculator("2,5"), 7);
-        assertEquals(sc.calculator("9,1"), 10);
-        assertEquals(sc.calculator("0,3"), 3);
+        int EXPECTED_1 = 7;
+        int EXPECTED_2 = 10;
+        int EXPECTED_3 = 3;
+
+        assertEquals(sc.calculator("2,5"), EXPECTED_1);
+        assertEquals(sc.calculator("9,1"), EXPECTED_2);
+        assertEquals(sc.calculator("0,3"), EXPECTED_3);
     }
 
     @Test

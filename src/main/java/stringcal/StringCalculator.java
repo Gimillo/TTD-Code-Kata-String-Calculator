@@ -1,5 +1,8 @@
 package stringcal;
 
+/*
+ * Calculator class.
+ */
 public class StringCalculator {
     /**
      * Main calculator.
@@ -7,24 +10,24 @@ public class StringCalculator {
      * @param arg operation to execute
      * @return result of operation
      */
-    public int calculator(String arg) {
+    public int calculator(String str) {
         int res = 0;
         String regex = ",\n";
 
-        if (arg == null) {
+        if (str == null) {
             return res;
         }
 
-        if (arg.length() == 1) {
-            return Integer.parseInt(arg);
+        if (str.length() == 1) {
+            return Integer.parseInt(str);
         }
 
-        if (arg.length() > 2 && arg.substring(0,2).equals("//")) {
-            regex += arg.charAt(2);
-            arg = arg.substring(3);
+        if (str.length() > 2 && str.substring(0, 2).equals("//")) {
+            regex += str.charAt(2);
+            str = str.substring(3);
         }
 
-        String[] operands = arg.split("[" + regex + "]");
+        String[] operands = str.split("[" + regex + "]");
 
         for (String operand : operands) {
             int number = Integer.parseInt(operand);
