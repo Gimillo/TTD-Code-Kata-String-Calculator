@@ -31,7 +31,7 @@ public class StringCalculator {
         }
 
         String[] operands = str.split("[" + regex + "]");
-        
+
         for (String operand : operands) {
             int number = Integer.parseInt(operand);
 
@@ -39,7 +39,7 @@ public class StringCalculator {
                 res += number;
             }
         }
-        
+
         return res;
     }
 }
