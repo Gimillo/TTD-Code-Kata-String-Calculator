@@ -1,13 +1,15 @@
 package stringcal;
 
-/*
+/**
  * Calculator class.
- */
+ * 
+ * @author Jaime Gimillo Bonaque
+*/
 public class StringCalculator {
     /**
      * Main calculator.
      * 
-     * @param arg operation to execute
+     * @param str operation to execute
      * @return result of operation
      */
     public int calculator(String str) {

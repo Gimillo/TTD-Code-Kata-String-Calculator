@@ -4,11 +4,20 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-/*
+/**
  * Class for testing the calculator.
- */
+ * 
+ * @author Jaime Gimillo Bonaque
+*/
 public class StringCalculatorTest {
     private StringCalculator sc = new StringCalculator();
+
+    final int EXPECTED_2 = 2;
+    final int EXPECTED_3 = 3;
+    final int EXPECTED_4 = 4;
+    final int EXPECTED_7 = 7;
+    final int EXPECTED_10 = 10;
+    final int EXPECTED_30 = 30;
 
     @Test
     public void nullTest() {
@@ -22,26 +31,22 @@ public class StringCalculatorTest {
 
     @Test
     public void numCommaNumSumTest() {
-        int EXPECTED_1 = 7;
-        int EXPECTED_2 = 10;
-        int EXPECTED_3 = 3;
-
-        assertEquals(sc.calculator("2,5"), EXPECTED_1);
-        assertEquals(sc.calculator("9,1"), EXPECTED_2);
+        assertEquals(sc.calculator("2,5"), EXPECTED_7);
+        assertEquals(sc.calculator("9,1"), EXPECTED_10);
         assertEquals(sc.calculator("0,3"), EXPECTED_3);
     }
 
     @Test
     public void numNewLineNumSumTest() {
-        assertEquals(sc.calculator("4\n3"), 7);
-        assertEquals(sc.calculator("2\n2"), 4);
-        assertEquals(sc.calculator("4\n0"), 4);
+        assertEquals(sc.calculator("4\n3"), EXPECTED_7);
+        assertEquals(sc.calculator("2\n2"), EXPECTED_4);
+        assertEquals(sc.calculator("4\n0"), EXPECTED_4);
     }
 
     @Test
     public void sumThreeNumbersTest() {
-        assertEquals(sc.calculator("1\n0,1"), 2);
-        assertEquals(sc.calculator("9,10\n11"), 30);
+        assertEquals(sc.calculator("1\n0,1"), EXPECTED_2);
+        assertEquals(sc.calculator("9,10\n11"), EXPECTED_30);
     }
 
     @Test
