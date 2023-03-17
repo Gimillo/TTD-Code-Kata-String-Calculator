@@ -12,7 +12,10 @@ public class StringCalculator {
      */
     public int calculator(String arg) {
         int res = 0;
-        String regex = ",\n", str = arg;
+        String regex = ",\n";
+		String str = arg;
+		final int maxlegth = 1000;
+		final int extrapos = 2;
 
         if (str == null) {
             return res;
@@ -22,9 +25,9 @@ public class StringCalculator {
             return Integer.parseInt(str);
         }
 
-        if (str.length() > 2 && str.substring(0, 2).equals("//")) {
-            regex += str.charAt(2);
-            str = str.substring(3);
+        if (str.length() > 2 && str.substring(0, extrapos).equals("//")) {
+            regex += str.charAt(extrapos);
+            str = str.substring(extrapos + 1);
         }
 
         String[] operands = str.split("[" + regex + "]");
@@ -32,7 +35,7 @@ public class StringCalculator {
         for (String operand : operands) {
             int number = Integer.parseInt(operand);
 
-            if (number <= 1000) {
+            if (number <= maxlegth) {
                 res += number;
             }
         }
