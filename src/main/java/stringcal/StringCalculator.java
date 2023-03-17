@@ -2,19 +2,17 @@ package stringcal;
 
 /**
  * Calculator class.
- * 
  * @author Jaime Gimillo Bonaque
 */
 public class StringCalculator {
     /**
      * Main calculator.
-     * 
-     * @param str operation to execute
+     * @param arg operation to execute
      * @return result of operation
      */
-    public int calculator(String str) {
+    public int calculator(String arg) {
         int res = 0;
-        String regex = ",\n";
+        String regex = ",\n", str = arg;
 
         if (str == null) {
             return res;

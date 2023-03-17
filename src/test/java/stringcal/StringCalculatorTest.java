@@ -6,7 +6,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Class for testing the calculator.
- * 
  * @author Jaime Gimillo Bonaque
 */
 public class StringCalculatorTest {
@@ -15,9 +14,13 @@ public class StringCalculatorTest {
     private final int expected2 = 2;
     private final int expected3 = 3;
     private final int expected4 = 4;
+    private final int expected6 = 6;
     private final int expected7 = 7;
     private final int expected10 = 10;
+    private final int expected11 = 11;
+    private final int expected13 = 13;
     private final int expected30 = 30;
+    private final int expected1001 = 1001;
 
     @Test
     public void nullTest() {
@@ -51,13 +54,13 @@ public class StringCalculatorTest {
 
     @Test
     public void ommitGreaterThan1000Test() {
-        assertEquals(sc.calculator("1000\n9999,1"), 1001);
-        assertEquals(sc.calculator("2020,3000\n13"), 13);
+        assertEquals(sc.calculator("1000\n9999,1"), expected1001);
+        assertEquals(sc.calculator("2020,3000\n13"), expected13);
     }
 
     @Test
     public void extraDelimiterTest() {
-        assertEquals(sc.calculator("//#3\n2#1"), 6);
-        assertEquals(sc.calculator("//?0?2?9"), 11);
+        assertEquals(sc.calculator("//#3\n2#1"), expected6);
+        assertEquals(sc.calculator("//?0?2?9"), expected11);
     }
 }
